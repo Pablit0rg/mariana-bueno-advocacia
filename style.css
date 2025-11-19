@@ -1,0 +1,85 @@
+/* ======== VARIÁVEIS (IDENTIDADE VISUAL) ======== */
+:root {
+    /* Paleta "Rich Black & Gold" */
+    --cor-fundo-base: #0a0a0a;       /* Preto quase absoluto */
+    --cor-fundo-destaque: #141414;   /* Cinza muito escuro (para cards) */
+    
+    --cor-texto-principal: #f5f5f5;  /* Branco Off-white (leitura) */
+    --cor-texto-secundario: #a3a3a3; /* Cinza médio */
+    
+    /* O Ouro (Simulando o logo dela) */
+    --cor-ouro-principal: #D4AF37;   /* Dourado Metálico Clássico */
+    --cor-ouro-brilho: #F2D06B;      /* Dourado Claro (Luz) */
+    --gradiente-ouro: linear-gradient(135deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+    
+    /* Fontes */
+    --font-titulo: 'Cinzel', serif;       /* A fonte da "Logo" e Títulos */
+    --font-texto: 'Montserrat', sans-serif; /* Leitura moderna */
+}
+
+/* RESET BÁSICO */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: var(--cor-fundo-base);
+    color: var(--cor-texto-principal);
+    font-family: var(--font-texto);
+    line-height: 1.6;
+}
+
+/* TIPOGRAFIA DE AUTORIDADE */
+h1, h2, h3 {
+    font-family: var(--font-titulo);
+    color: var(--cor-ouro-principal);
+    text-transform: uppercase; /* Mais imponente */
+    letter-spacing: 1px;
+}
+
+h1 { font-size: 2.5rem; line-height: 1.2; margin-bottom: 1rem; }
+
+/* BOTÃO DOURADO (CHAMADA DE AÇÃO) */
+.cta-button-gold {
+    display: inline-block;
+    background: var(--gradiente-ouro);
+    color: #000; /* Texto preto no dourado fica legível */
+    padding: 14px 28px;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 4px; /* Bordas mais retas = seriedade */
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3); /* Brilho dourado */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button-gold:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+}
+
+/* NAVBAR RESPONSIVA */
+.navbar {
+    background-color: rgba(10, 10, 10, 0.95); /* Vidro escuro */
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3); /* Linha dourada sutil */
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Responsividade Básica */
+@media (min-width: 768px) {
+    .hero-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+    }
+    .hero-text { flex: 1; }
+    .hero-image-wrapper { flex: 1; }
+}
